@@ -1,0 +1,16 @@
+{
+  "name": "portfolio-combined",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Combined portfolio project for frontend and backend",
+  "scripts": {
+    "start": "concurrently \"npm run start:server\" \"npm run start:client\"",
+    "start:server": "npm run start --prefix nestjs-server",
+    "start:client": "wait-on http://localhost:4000 && npm run start --prefix client"
+  },
+  "author": "Marlee Gerard",
+  "dependencies": {
+    "concurrently": "^9.0.0",
+    "wait-on": "^8.0.0"
+  }
+}
